@@ -1,2 +1,3 @@
 # midday-coffee
-Demo website
+
+Demo website to show image optimisations
