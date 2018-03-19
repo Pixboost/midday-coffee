@@ -1,3 +1,3 @@
 # midday-coffee
 
-Demo website to show image optimisations
+[Website](http://www.midday.coffee/index.html) to demonstrate image optimisations.
