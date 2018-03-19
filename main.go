@@ -13,29 +13,24 @@ type CoffeeCup struct {
 }
 
 func main()  {
-	fmt.Printf("Hello\n")
-
-	funcs := template.FuncMap{
-		"isRow": func(idx int) bool {
-			return idx % 4 == 0
-		},
-		"isNextRow": func(idx int) bool {
-			return (idx + 1) % 4 == 0
-		},
-	}
-
-	tmpl, err := template.New("cups.html").Funcs(funcs).ParseFiles("web/original/cups.html")
+	tmpl, err := template.New("cups.tmpl.html").ParseFiles("web/original/cups.tmpl.html")
 	if err != nil {
-		fmt.Printf("couldn't parse cups template: %v\n", err)
+		fmt.Printf("couldn't parse template: %v\n", err)
 		os.Exit(1)
 	}
 
-	err = tmpl.Execute(os.Stdout, data)
+	f, err :=os.OpenFile("web/original/cups.html", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0666)
 	if err != nil {
-		fmt.Printf("couldn't execute template: %v\n", err)
+		fmt.Printf("couldn't create output file: %v\n", err)
 		os.Exit(2)
 	}
+	defer f.Close()
 
+	err = tmpl.Execute(f, data)
+	if err != nil {
+		fmt.Printf("couldn't execute template: %v\n", err)
+		os.Exit(3)
+	}
 }
 
 var data = struct {

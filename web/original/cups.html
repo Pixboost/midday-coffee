@@ -36,21 +36,9 @@
 
 <div class="container">
     <h1 class="text-center">Coffee Cups</h1>
-    {{range $i, $c := .Cups}}
-        {{if isRow $i}}<div class="row">{{end}}
-            <div class="card">
-                <div class="img-wrapper">
-                    <img class="card-img-top" src="{{$c.Image}}">
-                </div>
-                <div class="card-body">
-                    <h5>{{$c.Name}}</h5>
-                    <p class="card-text">{{$c.Price}}</p>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
-                </div>
-            </div>
-        {{if isNextRow $i}}</div>{{end}}
-    {{end}}
     <div class="row">
+    
+
         <div class="col-md-4 col-lg-3 col-6">
             <div class="card">
                 <div class="img-wrapper">
@@ -58,62 +46,358 @@
                 </div>
                 <div class="card-body">
                     <h5>White</h5>
-                    <p class="card-text">$5.50</p>
+                    <p class="card-text">9.99</p>
                     <a href="#" class="btn btn-primary">Add to cart</a>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 col-lg-3 col-6">
-            <div class="card">
-                <div class="img-wrapper">
-                    <img class="card-img-top" src="../assets/cups/blur-2846257__340.jpg">
-                </div>
-                <div class="card-body">
-                    <h5>White</h5>
-                    <p class="card-text">$5.50</p>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
-                </div>
-            </div>
-        </div>
+
+    
+
         <div class="col-md-4 col-lg-3 col-6">
             <div class="card">
                 <div class="img-wrapper">
                     <img class="card-img-top" src="../assets/cups/cappuccino-593256__340.jpg">
                 </div>
                 <div class="card-body">
-                    <h5>Stylish Cappuccino</h5>
-                    <p class="card-text">$7.99</p>
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
                     <a href="#" class="btn btn-primary">Add to cart</a>
                 </div>
             </div>
         </div>
+
+    
+
         <div class="col-md-4 col-lg-3 col-6">
             <div class="card">
                 <div class="img-wrapper">
                     <img class="card-img-top" src="../assets/cups/cappuccino-756490__340.jpg">
                 </div>
                 <div class="card-body">
-                    <h5>White Cappuccino</h5>
-                    <p class="card-text">$9.99</p>
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
                     <a href="#" class="btn btn-primary">Add to cart</a>
                 </div>
             </div>
         </div>
+
+    
+
         <div class="col-md-4 col-lg-3 col-6">
             <div class="card">
                 <div class="img-wrapper">
                     <img class="card-img-top" src="../assets/cups/code-geek-2680204__340.png">
                 </div>
                 <div class="card-body">
-                    <h5>Code Geek</h5>
-                    <p class="card-text">$15.99</p>
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
                     <a href="#" class="btn btn-primary">Add to cart</a>
                 </div>
             </div>
         </div>
 
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/coffee-386878__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/coffee-777612__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/coffee-2127225__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/coffee-3129995__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/coffee-3139776__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/coffee-3183337__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/coffee-3183729__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/coffee-3219749__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/coffee-beans-3093228__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/coffee-mugs-459324__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/cup-1891446__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/cup-2315565__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/cup-2318315__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/cup-3082145__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/cup-3117730__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/cup-3183995__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/keep-calm-2816357__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/mug-3059994__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/smile-2001662__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/tea-cup-2107599__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">9.99</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+
+    
     </div>
 </div>
 </body>

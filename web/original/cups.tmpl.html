@@ -1,0 +1,57 @@
+<!doctype HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Coffee Cups</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .card-img-top {
+            height: 200px;
+        }
+        .card h5 {
+            height: 50px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 576px) {
+            .card-img-top {
+                height: auto;
+            }
+            .img-wrapper {
+                height: 150px;
+            }
+            .card-body {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center">Coffee Cups</h1>
+    <div class="row">
+    {{range $i, $c := .Cups}}
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="{{$c.Image}}">
+                </div>
+                <div class="card-body">
+                    <h5>{{$c.Name}}</h5>
+                    <p class="card-text">{{$c.Price}}</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    {{end}}
+    </div>
+</div>
+</body>
+</html>
