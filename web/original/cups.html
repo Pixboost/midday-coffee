@@ -3,6 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <title>Coffee Cups</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -34,6 +36,34 @@
 
 <div class="container">
     <h1 class="text-center">Coffee Cups</h1>
+    {{range $i, $c := .Cups}}
+        {{if isRow $i}}<div class="row">{{end}}
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="{{$c.Image}}">
+                </div>
+                <div class="card-body">
+                    <h5>{{$c.Name}}</h5>
+                    <p class="card-text">{{$c.Price}}</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        {{if isNextRow $i}}</div>{{end}}
+    {{end}}
+    <div class="row">
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img class="card-img-top" src="../assets/cups/blur-2846257__340.jpg">
+                </div>
+                <div class="card-body">
+                    <h5>White</h5>
+                    <p class="card-text">$5.50</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-4 col-lg-3 col-6">
             <div class="card">
