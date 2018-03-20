@@ -23,7 +23,7 @@ func main()  {
 		fmt.Printf("couldn't remove dist dir: %v\n", err)
 		os.Exit(4)
 	}
-	err = os.Mkdir("dist", 0666)
+	err = os.Mkdir("dist", 0755)
 	if err != nil {
 		fmt.Printf("couldn't create dist dir: %v\n", err)
 		os.Exit(5)
@@ -33,7 +33,7 @@ func main()  {
 		fmt.Printf("%s\n", path)
 		distPath := fmt.Sprintf("dist/%s", path)
 		if info.IsDir() {
-			err = os.Mkdir(distPath, 0666)
+			err = os.Mkdir(distPath, 0755)
 			if err != nil {
 				fmt.Printf("Couldn't create dist/%s dir: %v", path, err)
 				os.Exit(6)
