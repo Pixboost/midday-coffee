@@ -19,6 +19,10 @@
             margin-bottom: 20px;
         }
 
+        .navbar {
+            margin-bottom: 30px;
+        }
+
         @media (max-width: 576px) {
             .card-img-top {
                 height: auto;
@@ -29,13 +33,31 @@
             .card-body {
                 height: 180px;
             }
+            .search-form {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
 
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/">Midday.Coffee</a>
+    <form class="form-inline search-form">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+
 <div class="container">
-    <h1 class="text-center">Coffee Cups</h1>
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1 class="display-4">Find Your Coffee Cup</h1>
+            <p class="lead">We have them all in one place!</p>
+        </div>
+    </div>
+
     <div class="row">
     {{range $i, $c := .Cups}}
         <div class="col-md-4 col-lg-3 col-6">
@@ -45,7 +67,7 @@
                 </div>
                 <div class="card-body">
                     <h5>{{$c.Name}}</h5>
-                    <p class="card-text">{{$c.Price}}</p>
+                    <p class="card-text">${{$c.Price}}</p>
                     <a href="#" class="btn btn-primary">Add to cart</a>
                 </div>
             </div>
