@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"html/template"
 	"os"
+	"path/filepath"
+	"strings"
+	"io/ioutil"
 )
 
 type CoffeeCup struct {
@@ -12,14 +15,63 @@ type CoffeeCup struct {
 	Image string
 }
 
+//Copies web/ folder to dist/ and builds all HTML templates.
+//Template are identified by having *.tmpl.html suffix in the filename.
 func main()  {
-	tmpl, err := template.New("cups.tmpl.html").ParseFiles("web/original/cups.tmpl.html")
+	err := os.RemoveAll("dist")
+	if err != nil {
+		fmt.Printf("couldn't remove dist dir: %v\n", err)
+		os.Exit(4)
+	}
+	err = os.Mkdir("dist", os.ModeDir)
+	if err != nil {
+		fmt.Printf("couldn't create dist dir: %v\n", err)
+		os.Exit(5)
+	}
+
+	filepath.Walk("web", func(path string, info os.FileInfo, err error) error {
+		fmt.Printf("%s\n", path)
+		distPath := fmt.Sprintf("dist/%s", path)
+		if info.IsDir() {
+			err = os.Mkdir(distPath, os.ModeDir)
+			if err != nil {
+				fmt.Printf("Couldn't create dist/%s dir: %v", path, err)
+				os.Exit(6)
+			}
+		} else if strings.HasSuffix(path, "tmpl.html") {
+			if err != nil {
+				fmt.Printf("Couldn't read file %s dir: %v", path, err)
+				os.Exit(7)
+			}
+
+			distFilename := strings.Replace(distPath, ".tmpl", "", 1)
+			err = buildTemplate(path, filepath.Base(path), distFilename)
+			if err != nil {
+				fmt.Printf("Couldn't process template %s dir: %v", path, err)
+				os.Exit(8)
+			}
+		} else {
+			fileContent, err := ioutil.ReadFile(path)
+			if err != nil {
+				fmt.Printf("Couldn't read file %s dir: %v", path, err)
+				os.Exit(7)
+			}
+
+			ioutil.WriteFile(distPath, fileContent, 0666)
+		}
+		return nil
+	})
+}
+
+func buildTemplate(templateFilePath string, templateName string, outFilePath string) error {
+
+	tmpl, err := template.New(templateName).ParseFiles(templateFilePath)
 	if err != nil {
 		fmt.Printf("couldn't parse template: %v\n", err)
 		os.Exit(1)
 	}
 
-	f, err :=os.OpenFile("web/original/cups.html", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0666)
+	f, err :=os.OpenFile(outFilePath, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0666)
 	if err != nil {
 		fmt.Printf("couldn't create output file: %v\n", err)
 		os.Exit(2)
@@ -31,6 +83,8 @@ func main()  {
 		fmt.Printf("couldn't execute template: %v\n", err)
 		os.Exit(3)
 	}
+
+	return nil
 }
 
 var data = struct {
