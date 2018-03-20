@@ -33,7 +33,7 @@ func main()  {
 		fmt.Printf("%s\n", path)
 		distPath := fmt.Sprintf("dist/%s", path)
 		if info.IsDir() {
-			err = os.Mkdir(distPath, os.ModeDir)
+			err = os.Mkdir(distPath, 0666)
 			if err != nil {
 				fmt.Printf("Couldn't create dist/%s dir: %v", path, err)
 				os.Exit(6)
