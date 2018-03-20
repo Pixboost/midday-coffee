@@ -23,7 +23,7 @@ func main()  {
 		fmt.Printf("couldn't remove dist dir: %v\n", err)
 		os.Exit(4)
 	}
-	err = os.Mkdir("dist", os.ModeDir)
+	err = os.Mkdir("dist", 0666)
 	if err != nil {
 		fmt.Printf("couldn't create dist dir: %v\n", err)
 		os.Exit(5)
