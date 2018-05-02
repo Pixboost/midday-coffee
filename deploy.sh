@@ -11,3 +11,4 @@ fi
 
 gsutil cp -r dist/web/* gs://www.midday.coffee
 gsutil iam ch allUsers:objectViewer gs://www.midday.coffee
+gsutil -m setmeta -h "Content-Type: image/webp" gs://www.midday.coffee/webp-demo/*.webp
