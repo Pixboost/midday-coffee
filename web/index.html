@@ -1,14 +1,106 @@
 <!doctype HTML>
 <html>
-<head></head>
+<head>
+    <title>Pixboost Demos</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .demo-description {
+            height: 100px;
+        }
+        .card-text {
+            min-height: 50px;
+        }
+    </style>
+</head>
 <body>
-    <h1>Coffee it to the rest of the day</h1>
-    <p>This is a demo website for the <a href="https://pixboost.com">Pixboost Image Optimization Service</a></p>
-    <ul>
-        <li><a href="/original/cups.html">Not optimized demo web site</a></li>
-        <li><a href="/lazy-load/cups.html">Demo for js library</a></li>
-        <li><a href="/react-demo/index.html">Demo for react library</a></li>
-        <li><a href="/picture/cups.html">Demo for responsive images</a></li>
-    </ul>
+    <div class="container">
+        <h1>Coffee it to the rest of the day</h1>
+        <p class="lead">
+            This is a demo website for the <a href="https://pixboost.com">Pixboost Image Optimization Service</a>.
+            Below you will find examples of the same page that use different techniques of image optimisation, so
+            you can compare benefits of each one.
+        </p>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-header">
+                    Original
+                </div>
+                <div class="card-body">
+                    <p class="card-text demo-description">
+                        Online store listing page without any
+                        image optimisation applied
+                    </p>
+                    <p class="card-text">
+                        <b>ON</b>: -
+                    </p>
+                    <p class="card-text">
+                        <b>OFF</b>: Lazy Loading, WEBP, Responsive Images
+                    </p>
+                    <a class="card-link" href="/original/cups.html">Open</a>
+                    <a class="card-link" target="_blank" href="https://github.com/Pixboost/midday-coffee/blob/master/web/original/cups.tmpl.html">Sources</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Pixboost-js
+                </div>
+                <div class="card-body">
+                    <p class="card-text demo-description">
+                        Online store listing page with optimised images using
+                        <a href="https://github.com/Pixboost/pixboost-js">Pixboost.js</a>
+                    </p>
+                    <p class="card-text">
+                        <b>ON</b>: Lazy Loading, WEBP
+                    </p>
+                    <p class="card-text">
+                        <b>OFF</b>: Responsive Images
+                    </p>
+                    <a class="card-link" href="/lazy-load/cups.html">Open</a>
+                    <a class="card-link" target="_blank" href="https://github.com/Pixboost/midday-coffee/blob/master/web/lazy-load/cups.tmpl.html">Sources</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    HTML, Responsive
+                </div>
+                <div class="card-body">
+                    <p class="card-text demo-description">
+                        Online store listing page with responsive images using raw HTML
+                    </p>
+                    <p class="card-text">
+                        <b>ON</b>: WEBP, Responsive Images
+                    </p>
+                    <p class="card-text">
+                        <b>OFF</b>: Lazy Loading
+                    </p>
+                    <a class="card-link" href="/picture/cups.html">Open</a>
+                    <a class="card-link" target="_blank" href="https://github.com/Pixboost/midday-coffee/blob/master/web/picture/cups.tmpl.html">Sources</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Pixboost-react
+                </div>
+                <div class="card-body">
+                    <p class="card-text demo-description">
+                        Online store listing page with optimised images using
+                        <a href="https://github.com/Pixboost/pixboost-react">pixboost-react</a>
+                    </p>
+                    <p class="card-text">
+                        <b>ON</b>: Lazy Loading, WEBP, Responsive images
+                    </p>
+                    <p class="card-text">
+                        <b>OFF</b>: -
+                    </p>
+                    <a class="card-link" href="/react-demo/index.html">Open</a>
+                    <a class="card-link" target="_blank" href="https://github.com/Pixboost/pixboost-react/tree/master/example">Sources</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
