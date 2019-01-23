@@ -20,33 +20,24 @@
         }
 
         .navbar {
-            margin-bottom: 30px;
+            margin-bottom: 0;
         }
 
         .banner {
+            background-image: url('http://www.midday.coffee/assets/banner.jpg');
+            background-size: cover;
+            height: 600px;
             width: 100%;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 32px;
-        }
-
-        .banner > img {
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .banner > .text {
-            position: absolute;
-            color: white;
-            top: 10px;
-            left: 10px;
-            width: 100%;
-            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .banner > p {
+            color: white;
+            padding: 10px;
         }
 
         @media (max-width: 576px) {
@@ -63,8 +54,9 @@
                 display: none;
             }
 
-            .banner > .text {
+            .banner {
                 align-items: flex-start;
+                height: 400px;
             }
         }
     </style>
@@ -80,14 +72,12 @@
     </form>
 </nav>
 
+<div class="banner">
+    <p class="h1 display-4">Find Your Coffee Cup</p>
+    <p class="lead">We have them all in one place!</p>
+</div>
+
 <div class="container">
-    <div class="banner">
-        <img src="../assets/banner.jpg" alt="coffee beans"/>
-        <div class="text">
-            <p class="h1 display-4">Find Your Coffee Cup</p>
-            <p class="lead">We have them all in one place!</p>
-        </div>
-    </div>
 
     <div class="row">
     {{range $i, $c := .Cups}}
