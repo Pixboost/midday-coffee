@@ -1,0 +1,114 @@
+<!doctype HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Coffee Cups</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .card-img-top {
+            height: 200px;
+        }
+        .card h5 {
+            height: 50px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+        }
+
+        .banner {
+            background-image: url('http://pixboost.com/api/2/img/http://www.midday.coffee/assets/banner.jpg/optimise?auth=MTA0ODU5NDA0NQ__');
+            background-size: cover;
+            height: 600px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .banner > p {
+            color: white;
+            padding: 10px;
+        }
+
+        @media (max-width: 576px) {
+            .banner picture,
+            .banner img {
+                height: 400px;
+            }
+
+            .card-img-top {
+                height: auto;
+            }
+            .img-wrapper {
+                height: 150px;
+            }
+            .card-body {
+                height: 180px;
+            }
+            .search-form {
+                display: none;
+            }
+            .banner {
+                background-image: url('http://pixboost.com/api/2/img/http://www.midday.coffee/assets/banner.jpg/fit?size=576x400&auth=MTA0ODU5NDA0NQ__');
+                align-items: flex-start;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/">Midday.Coffee</a>
+    <form class="form-inline search-form">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+
+<div class="banner">
+    <p class="h1 display-4">Find Your Coffee Cup</p>
+    <p class="lead">We have them all in one place!</p>
+</div>
+
+<div class="container">
+    <div class="row">
+    {{range $i, $c := .Cups}}
+        <div class="col-md-4 col-lg-3 col-6">
+            <div class="card">
+                <div class="img-wrapper">
+                    <img
+                        class="card-img-top"
+                        src="https://pixboost.com/api/2/img/http://www.midday.coffee{{$c.Image}}/optimise?auth=MTA0ODU5NDA0NQ__"
+                        srcset="
+                            https://pixboost.com/api/2/img/http://www.midday.coffee{{$c.Image}}/resize?size=180&auth=MTA0ODU5NDA0NQ__ 180w,
+                            https://pixboost.com/api/2/img/http://www.midday.coffee{{$c.Image}}/resize?size=360&auth=MTA0ODU5NDA0NQ__ 360w,
+                            https://pixboost.com/api/2/img/http://www.midday.coffee{{$c.Image}}/optimise?auth=MTA0ODU5NDA0NQ__
+                        "
+                        sizes="(max-width: 576px) 180px"
+                        alt="{{$c.Name}}"
+                    />
+                </div>
+                <div class="card-body">
+                    <h5>{{$c.Name}}</h5>
+                    <p class="card-text">${{$c.Price}}</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    {{end}}
+    </div>
+</div>
+</body>
+</html>
